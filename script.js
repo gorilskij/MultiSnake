@@ -2,7 +2,7 @@ $killOnBite = false;
 $follow = false;
 $canvases = [4, 3];
 
-k = ['a', ',', 'e', 'o', 'ArrowLeft', 'ArrowUp', 'ArrowRight', 'ArrowDown'];
+k = ['a', ',', 'e', 'o', 'a', 'w', 'd', 's', 'ArrowLeft', 'ArrowUp', 'ArrowRight', 'ArrowDown'];
 mm = [[-1, 0], [0, -1], [1, 0], [0, 1]];
 snake = [[30, 30], [31, 30], [32, 30]];
 sk = snake.map(i => i[0]*60 + i[1]);
@@ -182,7 +182,7 @@ window.onkeydown = function (e) {
         return;
     }
 
-    let key = k.indexOf(key.key) % 4;
+    let key = k.indexOf(e.key) % 4;
     if (key === -1) return;
     if (kq.indexOf(key) === -1 && !(kq.length === 0 && mm[(key + 2) % 4] === m))
         if (kq.length < 2)
